@@ -10,13 +10,18 @@ class record
         int exp;
         string cname;
     public:
-    void etdtls(int eid,string ename,int esalary,int eexp,string ecname)
+    void etdtls()
     {
-        id=eid;
-        name=ename;
-        salary=esalary;
-        exp=eexp;
-        cname=ecname; 
+       cout<<"Enter employee id: ";
+       cin>>id;
+       cout<<"Enter employee name: ";
+       cin>>name;
+       cout<<"Enter employee salary: ";
+       cin>>salary;
+       cout<<"Enter employee city: ";
+       cin>>city;
+       cout<<"Enter employee previous complany name: ";
+       cin>>cname;
     }
     void display()
     {
@@ -29,19 +34,27 @@ class record
 };
 int main()
 {
-    record r;
-    r.etdtls(1,"yug",2345,3,"hello"); 
-    r.display();
-    cout<<"----------------------------------------------------"<<endl;
-    r.etdtls(2,"g",25,4,"hlo"); 
-    r.display();
-    cout<<"----------------------------------------------------"<<endl;
-    r.etdtls(4,"fedg",545,445,"dfqwehlo"); 
-    r.display();
-    cout<<"----------------------------------------------------"<<endl;
-    r.etdtls(41,"swfg",4525,46,"dvswbrthlo"); 
-    r.display();
-    cout<<"----------------------------------------------------"<<endl;
-    r.etdtls(25,"eg",5825,545744,"fqwefhlo"); 
-    r.display();
+    record r1;
+    record r2;
+    record r3;
+    record r4;
+    record r5;
+
+    r1.etdtls();
+    r2.etdtls();
+    r3.etdtls();
+    r4.etdtls();
+    r5.etdtls();
+    
+    cout<<"here is the enterd details: "<<endl;
+    r1.display();
+    cout<<"------------------------"<<endl;
+    r2.display();
+    cout<<"------------------------"<<endl;
+    r3.display();
+    cout<<"------------------------"<<endl;
+    r4.display();
+    cout<<"------------------------"<<endl;
+    r5.display();
+    cout<<"------------------------"<<endl;
 }

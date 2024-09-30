@@ -11,13 +11,16 @@ class car
     int year;
 
     public:
-    void etdtls(int eid,string ename,string ecol,string emodel,int eyear)
+    void etdtls()
     {
-        id=eid;
-        carname=ename;
-        col=ecol;
-        model=emodel;
-        year=eyear; 
+        cout<<"Enter car id: ";
+        cin>>id;
+        cout<<"Enter car company name: ";
+        cin>>carname;
+        cout<<"Enter car model: ";
+        cin>>model;
+        cout<<"Enter car regestration year: ";
+        cin>>year;
     }
     void print()
     {
@@ -31,16 +34,27 @@ class car
 };
 int main()
 {
-    car c;
-    c.etdtls(1,"NISSAN","RED","magnite",2025);
-    c.print();
-    cout<<"----------------------------------------------------"<<endl;
-    c.etdtls(2,"NISSAN","white","micra",2445);
-    c.print();
-    cout<<"----------------------------------------------------"<<endl;
-    c.etdtls(3,"RENAULT","YELLOW","KWID",2016);
-    c.print();
-    cout<<"----------------------------------------------------"<<endl;
-    c.etdtls(4,"RENAULT","White","TRIBER",2022);
-    c.print();
+    car c1;
+    car c2;
+    car c3;
+    car c4;
+    
+    c1.etdtls();
+    cout<<"-------------------------"<<endl;
+    c2.etdtls();
+    cout<<"-------------------------"<<endl;
+    c3.etdtls();
+    cout<<"-------------------------"<<endl;
+    c4.etdtls();
+    cout<<"-------------------------"<<endl;
+
+    cout <<"here is details"<<endl; 
+    c1.print();   
+    cout<<"-------------------------"<<endl;
+    c2.print();   
+    cout<<"-------------------------"<<endl;
+    c3.print();   
+    cout<<"-------------------------"<<endl;
+    c4.print();   
+    cout<<"-------------------------"<<endl;
 }
