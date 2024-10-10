@@ -7,52 +7,45 @@ class train
     string source;
     string dest;
     string time;
-    static int count;
-
-
+    
     public:
     train()
     {
         no=0;
+        tname="";
         source="";
         dest="";
         time="";         
     }
-    ~train()
-    {
-        count=NULL;
-    }
-    void inputtrain(int a,  string b, string c, string d,string r)
+    train(int a,string b,string c,string d,string e)
     {
         no=a;
         tname=b;
         source=c;
         dest=d;
-        time=r;
+        time=e;
+    }
+    void inputtrain()
+    {
+       cout<<"Enter train no: ";
+       cin>>no;
+       cout<<"Enter train name: ";
+       cin>>tname;
+       cout<<"Enter train source: ";
+       cin>>source;
+       cout<<"Enter train destination: ";
+       cin>>dest;
+       cout<<"Enter train time: ";
+       cin>>time;
     }
     void display()
     {
-        cout<<no<<" "<<tname<<" "<<source<<" "<<dest<<endl;
-    }
-    static int gettraincount()
-    {
-        return count;
+        cout<<no<<" "<<tname<<" "<<source<<" "<<dest<<""<<time<<endl;
     }  
-};
-class system
-{
-    public:
-    void addtrain()
-    {
-
-    }
-};
+}; 
 int main()
 {
-    int n=3;
-    train t[3];
-    t[0].inputtrain(2325,"rajdhani","surat","mumbai","12:10");
-    t[1].inputtrain(25325,"garibrath","mumbai","delhi","11:10");
-    t[3].inputtrain(23425,"karnavati","surat","mumbai","01:10");
-
+    train t1(2345,"rajdhani","surat","mumbai","12:10");
+    train t2(23445,"karnavati","mumbai","surat","11:00");
+    train t3(2345,"garibrath","pune","mumbai","1:10");
 }
