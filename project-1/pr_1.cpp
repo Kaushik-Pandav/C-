@@ -9,6 +9,7 @@ class train
     string time;
     
     public:
+    static int count;
     train()
     {
         no=0;
@@ -17,14 +18,11 @@ class train
         dest="";
         time="";         
     }
-    train(int a,string b,string c,string d,string e)
+    ~train()
     {
-        no=a;
-        tname=b;
-        source=c;
-        dest=d;
-        time=e;
+        count--;
     }
+  
     void inputtrain()
     {
        cout<<"Enter train no: ";
@@ -40,12 +38,68 @@ class train
     }
     void display()
     {
-        cout<<no<<" "<<tname<<" "<<source<<" "<<dest<<""<<time<<endl;
+        cout<<no<<" "<<tname<<" "<<source<<" "<<dest<<" "<<time<<endl;
     }  
+    int getno()
+    {
+        return no;
+    }
 }; 
-int main()
+int train::count=0;
+class systemrecord
 {
-    train t1(2345,"rajdhani","surat","mumbai","12:10");
-    train t2(23445,"karnavati","mumbai","surat","11:00");
-    train t3(2345,"garibrath","pune","mumbai","1:10");
+    train t[100];
+    public:
+    void addtrain()
+    {
+        for(int i=0;i<train::count;i++)
+        {
+            t[i].inputtrain();
+        }
+
+    }
+    void displaytrain()
+    {
+        for(int i=0;i<train::count;i++)
+        {
+            t[i].display();
+        }
+    }
+    void search(int a)
+    {
+        for(int i=0;i<train::count;i++)
+        {
+            if(t[i].getno()==a)
+            {
+                displaytrain();
+            }
+        }
+    }
+
+};
+int main()
+{   
+    systemrecord s;
+    int a;
+    cout<<"enter total no of train";
+    cin>>train::count;
+    s.addtrain();
+    cout<<"---railway reservation system---"<<endl;
+    cout<<"Press 1 for display all train"<<endl;
+    cout<<"Press 2 for search by train "<<endl;
+    cout<<"Press 3 for exit "<<endl;
+    cin>>a;
+      switch(a){
+        case 1:
+            s.displaytrain();
+            break;
+        case 2:
+            int tno;
+            cout<<"enter train no ";
+            cin>>tno;
+            s.search(tno);
+            break;
+        default:
+            cout<<"Thank you !!!!!!!!";
+      }
 }
