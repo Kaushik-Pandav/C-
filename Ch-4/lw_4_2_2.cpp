@@ -41,7 +41,7 @@ class D: public B, public C
     public:
     void sum()
     {   
-        cout<<"sum of four numbers = "<<C::b+C::c+C::a+C::d;
+        cout<<"sum of four numbers = "<<B::a+B::d+B::b+C::c;
     }
 };
 int main()

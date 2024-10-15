@@ -100,7 +100,7 @@ int main()
             p--;
             p->dsp();
         }
-        delete[] f;
+        delete[] p;
         break;
     default:
         cout<<"enter valid number!!!!";
