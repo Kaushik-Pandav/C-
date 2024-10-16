@@ -35,12 +35,9 @@ class Vehical
         cout<<"vehical model is : "<<model<<endl;
         cout<<"vehical year is : "<<year<<endl;
     }
-    ~Vehical()
+    int getid()
     {
-        id=0;
-        menufecture="";
-        model="";
-        year=0;
+        return id;
     }
 };
 class car:public Vehical
@@ -157,20 +154,18 @@ class SUV:public car
 class regi
 {
     public:
-    car c1[100];
-    electriccar e1[100];
-    aircraft a1[100];
-    flyingcar f1[100];
-    sportscar s1[100];
-    sedan sd1[100];
-    SUV suv1[100];
-    Vehical v[100];
+    car c1;
+    electriccar e1;
+    aircraft a1;
+    flyingcar f1;
+    sportscar s1;
+    sedan sd1;
+    SUV suv1;
+    Vehical v;
 
     int n;
     void adddata()
     {   
-        for(int i=0;i<Vehical::totalvehical;i++)
-        {
             cout<<"Enter 1 for car and 2 for aircraf ";
             cin>>n;
             switch(n)
@@ -180,53 +175,51 @@ class regi
                     cout<<"enter 2 for Flying car:"<<endl;
                     cout<<"enter 3 for sedan car:"<<endl;
                     cout<<"enter 4 for SUV car :"<<endl;
-                    cin>>c1[i].fueltype;
-                    switch(c1[i].fueltype)
+                    cin>>c1.fueltype;
+                    switch(c1.fueltype)
                     {
                         case 1:
-                            e1[i].setdataev();
+                            e1.setdataev();
                             break;
                         case 2:
-                            f1[i].setdatafc();
+                            f1.setdatafc();
                             break;
                         case 3:
-                            sd1[i].setdatasadan();
+                            sd1.setdatasadan();
                             break;
                         case 4:
-                            suv1[i].setdatasuv();
+                            suv1.setdatasuv();
+                            break;
                         default :
                             cout<<"invalid code!!!!!"<<endl;
                     }
                 case 2:
-                    a1[i].setdataac();
+                    a1.setdataac();
                     break;
                 default:
                     cout<<"invalid code!!!!!!!!";
             }
-        }
     }
     void displayall()
     {
         for(int i=0;i<Vehical::totalvehical;i++)
         {
-            if
+            v.getdata();
         }
-    }
-    void display()
-    {
-
     }
     
 };
-int Vehical::totalvehical=0;
+int Vehical::totalvehical;
 int main()
 {
-    
+    Vehical v1;
     cout<<"enter no of vehicals :";
     cin>>Vehical::totalvehical;  
-    regi r;  
-    Vehical v[Vehical::totalvehical];
-    r.adddata();
+    regi r[Vehical::totalvehical];  
+    for(int i=0;i<Vehical::totalvehical;i++)
+    {
+        r[i].adddata();
+    }
     int k;
     cout<<"enter 1 for dsplay add details "<<endl;
     cout<<"enter 2 to search by id ";
@@ -235,12 +228,24 @@ int main()
     {
         for(int i=0;i<Vehical::totalvehical;i++)
         {
-            r.displayall();
+            r[i].displayall();;
         }
     }
     else if(k=2)
     {
-        
+        int p;
+        cout<<"enter id";
+        cin>>p;
+        for(int i=0;i<Vehical::totalvehical;i++)
+        {
+         int l;
+         cout<<"enter id of vehical: ";   
+         cin>>l;
+        if(l==v1.getid())
+            {
+                 v1.getdata();
+            }
+        };
     }
 
 }
