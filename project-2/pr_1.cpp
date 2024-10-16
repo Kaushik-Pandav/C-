@@ -116,7 +116,7 @@ class sportscar:public electriccar
         cout<<"enter top speed of car :";
         cin>>topspeed;
     }
-    void getdata()
+    void getdatspcar()
     {
         getdataev();
         cout<<"top speed of car is : "<<topspeed<<endl;
