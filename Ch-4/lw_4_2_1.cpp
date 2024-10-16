@@ -71,7 +71,7 @@ int main()
             i.ICICI::setdata();
             i.icici();
         default:
-            cout<<"ERROR ....... NOT found!!!!"
+            cout<<"ERROR ....... NOT found!!!!";
     }
        
     

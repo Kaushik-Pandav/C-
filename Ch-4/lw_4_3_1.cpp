@@ -72,10 +72,12 @@ int main()
     cout<<"enter 1 for full time employee";
     cout<<"enter 2 for part time employee ";
     cin>>a;
+    fulltime *f=new fulltime[n];
+    parttime *p=new parttime[n];
     switch (a)
     {
     case 1:
-        fulltime *f=new fulltime[n];
+        
         for(int i=0;i<n;i++)
         {
             f->st();
@@ -89,7 +91,7 @@ int main()
         delete[] f;
         break;
     case 2:
-        parttime *p=new parttime[n];
+        
         for(int i=0;i<n;i++)
         {
             p->stp();
