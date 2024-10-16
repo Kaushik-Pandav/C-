@@ -2,13 +2,13 @@
 using namespace std;
 class Vehical
 {
-    int id;
+    
     string menufecture;
     string model;
     int year;
     public:
     static int totalvehical;
-
+    int id;
     Vehical()
     {
         id=0;
@@ -35,10 +35,7 @@ class Vehical
         cout<<"vehical model is : "<<model<<endl;
         cout<<"vehical year is : "<<year<<endl;
     }
-    int getid()
-    {
-        return id;
-    }
+    
 };
 class car:public Vehical
 {
@@ -207,7 +204,10 @@ class regi
             v.getdata();
         }
     }
-    
+    int getid()
+    {
+        return v.id;
+    }
 };
 int Vehical::totalvehical;
 int main()
@@ -221,7 +221,7 @@ int main()
         r[i].adddata();
     }
     int k;
-    cout<<"enter 1 for dsplay add details "<<endl;
+    cout<<"enter 1 for display all details "<<endl;
     cout<<"enter 2 to search by id ";
     cin>>k;
     if(k=1)
@@ -238,10 +238,7 @@ int main()
         cin>>p;
         for(int i=0;i<Vehical::totalvehical;i++)
         {
-         int l;
-         cout<<"enter id of vehical: ";   
-         cin>>l;
-        if(l==v1.getid())
+        if(p==r[i].getid())
             {
                  v1.getdata();
             }
