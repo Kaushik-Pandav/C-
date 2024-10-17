@@ -163,38 +163,39 @@ class regi
     int n;
     void adddata()
     {   
-            cout<<"Enter 1 for car and 2 for aircraf ";
+            cout<<"Enter 1 to add vehical of any type "<<endl;
+            cout<<"Enter 2 to add car"<<endl;
+            cout<<"enter 3 for EV:"<<endl;
+            cout<<"enter 4 for Flying car:"<<endl;
+            cout<<"enter 5 for sedan car:"<<endl;
+            cout<<"enter 6 for SUV car :"<<endl;
+            cout<<"Enter 7 to add aircraft: "<<endl;
             cin>>n;
             switch(n)
             {
                 case 1:
-                    cout<<"enter 1 for EV:"<<endl;
-                    cout<<"enter 2 for Flying car:"<<endl;
-                    cout<<"enter 3 for sedan car:"<<endl;
-                    cout<<"enter 4 for SUV car :"<<endl;
-                    cin>>c1.fueltype;
-                    switch(c1.fueltype)
-                    {
-                        case 1:
-                            e1.setdataev();
-                            break;
-                        case 2:
-                            f1.setdatafc();
-                            break;
-                        case 3:
-                            sd1.setdatasadan();
-                            break;
-                        case 4:
-                            suv1.setdatasuv();
-                            break;
-                        default :
-                            cout<<"invalid code!!!!!"<<endl;
-                    }
+                    v.setdata();
+                    break;
                 case 2:
+                    c1.setdatacar();
+                    break;
+                case 3:
+                    e1.setdataev();
+                    break;
+                case 4:
+                    f1.setdatafc();
+                    break;
+                case 5:
+                    sd1.setdatasadan();
+                    break;
+                case 6:
+                    suv1.setdatasuv();
+                    break;
+                case 7:
                     a1.setdataac();
                     break;
                 default:
-                    cout<<"invalid code!!!!!!!!";
+                    cout<<"Invalid code!!!!"<<endl;
             }
     }
     void displayall()
