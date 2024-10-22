@@ -88,7 +88,7 @@ class cb:public Bank
     }
     void checkoverdraft()
     {
-        double a;
+        long double a;
         cout<<"enter ammount that you wanted to withdraw";
         cin>>a;
         double p=withdraw1(a);
